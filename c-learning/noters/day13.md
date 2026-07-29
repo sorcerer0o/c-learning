@@ -1,0 +1,100 @@
+# Day13 - 链表操作复习
+
+## 线性表复习
+
+  数组:
+    - 空间连续, 随机访问 O(1)
+    - 插入/删除 O(n), 需要挪数据
+    - 可利用 CPU 缓存 (空间连续性)
+
+  链表:
+    - 空间不连续, 顺序访问 O(n)
+    - 插入/删除 O(1) (已知位置), 查找 O(n)
+    - 无法利用 CPU 缓存
+
+## 链表核心操作
+
+  头插法:
+    1. 分配新节点, 初始化为新值
+    2. 新节点 next 指向旧头节点
+    3. 更新头指针
+
+  尾插法:
+    1. 分配新节点
+    2. 链表为空 -> 新节点为头
+    3. 链表非空 -> 遍历到末尾, 接上
+
+  删除节点 (按值):
+    1. 链表为空, 不操作
+    2. 删除第一个节点: 更新头指针
+    3. 删除其他节点: 找到前驱, 修改 next
+
+  反转链表:
+    方法1: 三指针迭代 (prev, curr, next)
+    方法2: 递归
+
+## 代码示例
+
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  typedef struct node {
+      int data;
+      struct node *next;
+  } Node;
+
+  // 反转链表 (迭代)
+  Node* reverse(Node *head) {
+      Node *prev = NULL, *curr = head, *next;
+      while (curr) {
+          next = curr->next;
+          curr->next = prev;
+          prev = curr;
+          curr = next;
+      }
+      return prev;
+  }
+
+  // 反转链表 (递归)
+  Node* reverse_recursive(Node *head) {
+      if (!head || !head->next) return head;
+      Node *new_head = reverse_recursive(head->next);
+      head->next->next = head;
+      head->next = NULL;
+      return new_head;
+  }
+
+  int main(void) {
+      // 测试略
+      return 0;
+  }
+
+## 常见错误
+
+  1. 遍历时修改了链表结构 (删除/插入) 导致指针失效
+  2. 忘记更新头指针
+  3. 空链表操作
+
+## 面试常问
+
+  Q: 链表和数组的区别?
+  A: 数组连续内存, 随机访问快, 插入删除慢, 大小固定。
+     链表不连续, 顺序访问, 插入删除快, 大小动态。
+
+  Q: 链表反转几种方式?
+  A: 迭代 (三指针) 和 递归。
+     迭代更高效, 递归代码更简洁但有栈溢出风险。
+
+## 练习
+
+  1. 实现链表的头插/尾插/删除/查找
+  2. 实现链表反转 (迭代+递归)
+  3. 判断链表是否有环
+  4. 合并两个有序链表
+
+## 复习记录
+  - [ ] R1 (次日)
+  - [ ] R3 (3天后)
+  - [ ] R7 (7天后)
+  - [ ] R14 (14天后)
+  - [ ] R30 (30天后)

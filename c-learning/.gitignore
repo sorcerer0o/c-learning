@@ -1,0 +1,32 @@
+# 编译产物
+*.o
+*.exe
+*.out
+*.obj
+*.dll
+*.lib
+
+# 编辑器临时文件
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# PDF 书籍 (版权, 体积大)
+*.pdf
+
+# zip 压缩包
+*.zip
+
+# POS 格式导图 (.mm 已够)
+# 如果要保留 .pos, 删除下面这行
+# *.pos
+
+# 个人备忘 (如果你不想公开)
+# misc/盲点.md
+# misc/备忘.txt
