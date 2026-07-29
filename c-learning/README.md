@@ -21,31 +21,36 @@
 一、工作区目录结构
 ===============================================================================
 
-  你的工作区目前如下, 建议保持:
+  c-learning/ (本仓库)
+  |-- README.md                    本文件 (目录总表 & 每日计划)
+  |-- .gitignore
+  |-- notes/                       笔记 (day01-day23)
+  |-- mindmaps/                    思维导图 (.mm + .pos)
+  |-- misc/                        杂项 (盲点, 备忘等)
+  |-- preview/                     预习资料 (PDF)
 
-  ~/
-  |-- notes/c-learning/            笔记 (已存在)
-  |   |-- 00_idex/                 本目录总表
-  |   |-- 24_linux_files/          Linux 文件相关笔记
-  |
-  |-- projects/                    练习代码 (已存在)
-  |   |-- Day02/                   每天一个文件夹
-  |   |-- Day04/
-  |   |-- day05/
-  |   |-- day06/
-  |   |-- ...                      后续每日代码放此处
-
-  建议逐步调整为:
-
-  ~/code/c/                        所有 C 代码统一存放 (新建)
+  ~/code/c/                        C 代码仓库
   |-- basic/                       基础练习 (day01-day09)
   |-- ds_algo/                     数据结构与算法 (day10-day17)
   |-- linux/                       Linux 系统编程 (day18-day25)
-  |-- projects/                    完整项目 (学生管理系统等)
+  |-- projects/                    完整项目
   |-- leetcode/                    LeetCode 刷题
 
-  不强制迁移, 目录可自行决定。
+  ~/code/cpp/                      C++ 代码仓库
+  |-- basic/                       C++ 基础
+  |-- oop/                         面向对象
+  |-- stl/                         STL 练习
+  |-- projects/                    完整项目
+  |-- leetcode/                    LeetCode 刷题
+
   关键原则: 笔记不混代码, 一个文件只做一件事。
+
+  学习流程:
+
+    1. 打开 notes/dayXX-主题.md 学习知识点
+    2. 打开 mindmaps/dayXX-主题.mm 看思维导图
+    3. 在 ~/code/c/basic/ 下创建对应 dayXX/ 目录写代码
+    4. 用 git 管理 ~/code/c/ 的练习代码
 
 ===============================================================================
 二、多端同步方案 (解决 WSL + Windows + VM 不连续问题)
@@ -143,7 +148,7 @@
     学习阶段        推荐编辑器        原因
     -----------    -------------     ------------------------
     初学基础        VS (Windows)     调试器最强, 可视化管理
-    (Day00-05)      VS Code + WSL    图形化, 熟悉 Linux 编译
+    (Day01-05)      VS Code + WSL    图形化, 熟悉 Linux 编译
 
     指针/字符串     Neovim (WSL)     轻量, 练 Vim 手感
     (Day06-09)      GDB (WSL)        调试 C 程序
@@ -209,7 +214,7 @@
 
   3.4 编辑器的阶段过渡
 
-    第一阶段 (Day00-05):
+     第一阶段 (Day01-05):
       VS 写代码 + VS 调试
     第二阶段 (Day06-12):
       VS 调试 + Neovim 写代码
@@ -233,7 +238,7 @@
 
   4.2 上午: 学习新知识 (1-2 小时)
 
-    [ ] 打开今日笔记: vim noters/dayXX.md
+    [ ] 打开今日笔记: vim notes/dayXX.md
     [ ] 通读笔记, 理解每个知识点
     [ ] 对照思维导图 (如果有) 梳理知识结构
     [ ] 在笔记中遇到不理解的地方, 回到对应的预习 PDF 查阅
@@ -284,7 +289,7 @@
     状态: [ ] 学习中 / [ ] 已掌握
     ---
     [ ] 晨间: git pull + 看计划
-    [ ] 学习: noters/dayXX.md
+    [ ] 学习: notes/dayXX.md
     [ ] 练习: x 题 (手写)
     [ ] 调试: 成功/失败
     [ ] 复习: R1( ) R3( ) R7( ) R14( )
@@ -319,31 +324,29 @@
 
     学习日   学习内容            R1(R+1)  R3(R+3)  R7(R+7)  R14(R+14)
     -------  ------------------  -------  -------  -------  ---------
-    第1天    环境搭建            --       --       --       --
-    第2天    变量/函数/IO        D1       --       --       --
-    第3天    预处理/调试         D2       D1       --       --
-    第4天    数据类型/位运算     D3       D2       --       --
-    第5天    运算符              D4       D3       D1       --
-    第6天    数组                D5       D4       D2       --
-    第7天    函数详解            D6       D5       D3       --
-    第8天    指针基础            D7       D6       D4       --
-    第9天    指针进阶/字符串     D8       D7       D5       --
-    第10天   字符串进阶/命令行   D9       D8       D6       --
-    第11天   结构体/枚举/malloc  D10      D9       D7       D1
-    第12天   动态内存管理        D11      D10      D8       D2
-    第13天   链表/函数指针       D12      D11      D9       D3
-    第14天   链表复习            D13      D12      D10      D4
-    第15天   哈希表              D14      D13      D11      D5
-    第16天   二叉树/排序         D15      D14      D12      D6
-    第17天   高级排序/文件流     D16      D15      D13      D7
-    第18天   文件流深入          D17      D16      D14      D8
-    第19天   Shell/GCC/Vim       D18      D17      D15      D9
-    第20天   AI概念              D19      D18      D16      D10
-    第21天   目录流/无缓冲       D20      D19      D17      D11
-    第22天   无缓冲/mmap         D21      D20      D18      D12
-    第23天   管道/IO复用         D22      D21      D19      D13
-    第24天   进程基础            D23      D22      D20      D14
-    第25天   综合项目            D24      D23      D21      D15
+     第1天    变量/函数/IO        --       --       --       --
+     第2天    预处理/调试         D1       --       --       --
+     第3天    数据类型/位运算     D2       D1       --       --
+     第4天    运算符              D3       D2       --       --
+     第5天    数组                D4       D3       D1       --
+     第6天    函数详解            D5       D4       D2       --
+     第7天    指针基础            D6       D5       D3       --
+     第8天    指针进阶/字符串     D7       D6       D4       --
+     第9天    字符串进阶/命令行   D8       D7       D5       --
+     第10天   结构体/枚举/malloc  D9       D8       D6       --
+     第11天   动态内存管理        D10      D9       D7       D1
+     第12天   链表/函数指针       D11      D10      D8       D2
+     第13天   链表复习            D12      D11      D9       D3
+     第14天   哈希表              D13      D12      D10      D4
+     第15天   二叉树/排序         D14      D13      D11      D5
+     第16天   高级排序/文件流     D15      D14      D12      D6
+     第17天   文件流深入          D16      D15      D13      D7
+     第18天   Shell/GCC/Vim       D17      D16      D14      D8
+     第19天   目录流/无缓冲       D18      D17      D15      D9
+     第20天   无缓冲/mmap         D19      D18      D16      D10
+     第21天   管道/IO复用         D20      D19      D17      D11
+     第22天   进程基础            D21      D20      D18      D12
+     第23天   综合项目            D22      D21      D19      D13
 
 ===============================================================================
 六、学习路线总表 (25天详细计划)
@@ -352,23 +355,10 @@
   Phase 1: C语言基础 (第1-12天)
   目标: 掌握变量/类型/运算符/指针/字符串, 能写 200 行程序
 
-  第1天: 环境搭建 + 第一个C程序
-    学习目标: 搭建开发环境, 编译运行第一个C程序
-    学习内容:
-      - 安装 MinGW / GCC / VS / Vim (noters/day00.md)
-      - GCC 四阶段编译: hello.c -> hello.i -> hello.s -> hello.o -> hello
-      - VS 调试基本操作: F9/F10/F11/监视/调用堆栈
-      - Vim 基本操作: i 插入, Esc 普通, :wq 保存退出
-    练习:
-      [ ] 1. 用三种方式编译运行 hello.c (命令行/VS/WSL gcc)
-      [ ] 2. 故意制造编译错误, 观察错误信息
-      [ ] 3. 用 GDB 或 VS 单步执行 hello.c, 观察变量变化
-    复习: (无)
-
   第2天: 变量 / 函数 / printf / scanf
     学习目标: 掌握C基本语法, 熟练使用 printf/scanf
     学习内容:
-      - 32个关键字, 标识符命名规则 (noters/day01.md)
+      - 32个关键字, 标识符命名规则 (notes/day01.md)
       - 变量声明/定义/初始化/赋值
       - printf 格式控制符: %d %f %lf %c %s %p %x
       - scanf 输入原理: 匹配规则, & 取址
@@ -382,7 +372,7 @@
   第3天: 预处理 / 内存模型 / 调试技巧
     学习目标: 掌握宏定义, 理解虚拟内存, 学会调试
     学习内容:
-      - #define 宏常量与宏函数 (注意括号) (noters/day02.md)
+      - #define 宏常量与宏函数 (注意括号) (notes/day02.md)
       - 编译四阶段: 预处理/编译/汇编/链接
       - printf 行缓冲区
       - 虚拟内存五大区域: 代码段/数据段/堆/栈/内核
@@ -397,7 +387,7 @@
   第4天: 数据类型与位运算
     学习目标: 掌握所有基本数据类型和位运算应用
     学习内容:
-      - sizeof 运算符 (noters/day03.md)
+      - sizeof 运算符 (notes/day03.md)
       - 整数类型: short/int/long/long long 取值范围
       - 浮点数: float/double, IEEE754, 精度问题
       - 字符 char: ASCII, ctype.h, getchar/putchar
@@ -413,7 +403,7 @@
   第5天: 运算符与表达式
     学习目标: 掌握运算符优先级, 短路求值, 类型转换
     学习内容:
-      - 运算符优先级表 (noters/day04.md)
+      - 运算符优先级表 (notes/day04.md)
       - 短路求值: && 和 || (经典面试题)
       - 隐式类型转换: 整数提升, 无符号陷阱
       - 显式转换: (type)expr
@@ -428,7 +418,7 @@
   第6天: 数组
     学习目标: 掌握一维/二维数组, 数组名与指针的关系
     学习内容:
-      - 数组声明与初始化 (noters/day05.md)
+      - 数组声明与初始化 (notes/day05.md)
       - 数组寻址: address = base + i * sizeof(element)
       - arr vs &arr 区别 (加1跳多少)
       - 二维数组内存布局
@@ -443,7 +433,7 @@
   第7天: 函数详解
     学习目标: 掌握函数传参, 栈帧, static, 递归
     学习内容:
-      - 函数栈帧: 调用过程, 压栈/弹栈 (noters/day06.md)
+      - 函数栈帧: 调用过程, 压栈/弹栈 (notes/day06.md)
       - 局部变量 vs 全局变量
       - static 关键字 (修饰局部/全局的区别)
       - 值传递 vs 地址传递
@@ -458,7 +448,7 @@
   第8天: 指针基础
     学习目标: 理解指针的本质, 掌握指针基本操作
     学习内容:
-      - 内存地址 (32位 vs 64位) (noters/day07.md)
+      - 内存地址 (32位 vs 64位) (notes/day07.md)
       - 指针 vs 指针变量
       - 解引用
       - NULL 与野指针 (三大来源)
@@ -475,7 +465,7 @@
   第9天: 指针进阶与字符串
     学习目标: 掌握数组指针/指针数组, const与指针, 字符串
     学习内容:
-      - 数组指针 int (*p)[n] vs 指针数组 int *p[n] (noters/day08.md)
+      - 数组指针 int (*p)[n] vs 指针数组 int *p[n] (notes/day08.md)
       - const 与指针: 四种组合
       - 字符串 = 字符数组 + \0
       - 字符串字面值 (只读数据段)
@@ -490,7 +480,7 @@
   第10天: 字符串进阶与命令行参数
     学习目标: 掌握字符串安全操作和命令行参数
     学习内容:
-      - scanf 安全问题, fgets 替代 (noters/day09.md)
+      - scanf 安全问题, fgets 替代 (notes/day09.md)
       - strncpy/strncat/strncmp (安全版本)
       - strtok 分割字符串
       - 字符串数组: 二维数组 vs 指针数组
@@ -504,7 +494,7 @@
   第11天: 结构体 / 枚举 / 动态内存
     学习目标: 掌握 struct, enum, malloc/free
     学习内容:
-      - struct 定义与 typedef 简化 (noters/day10.md)
+      - struct 定义与 typedef 简化 (notes/day10.md)
       - 数据对齐 (padding) 与 sizeof 计算
       - 结构体传参: 值传递 vs 地址传递
       - 枚举 enum
@@ -521,7 +511,7 @@
   第12天: 动态内存管理深入
     学习目标: 灵活掌握 malloc/calloc/realloc/free
     学习内容:
-      - free: 释放空间不是指针 (noters/day11.md)
+      - free: 释放空间不是指针 (notes/day11.md)
       - calloc: 自动置零
       - realloc: 正确用法 (临时指针)
       - vector 动态数组实现
@@ -553,7 +543,7 @@
   第13天: 头文件 / 函数指针 / 链表
     学习目标: 掌握头文件规范, 函数指针, 链表实现
     学习内容:
-      - 头文件保护 #ifndef/#define/#endif (noters/day12.md)
+      - 头文件保护 #ifndef/#define/#endif (notes/day12.md)
       - qsort 使用: 自定义比较函数
       - 链表节点定义 (Node)
       - 头插法/尾插法/删除/遍历
@@ -567,7 +557,7 @@
   第14天: 链表操作复习
     学习目标: 熟练掌握链表反转/合并等操作
     学习内容:
-      - 数组 vs 链表对比 (noters/day13.md)
+      - 数组 vs 链表对比 (notes/day13.md)
       - 链表反转: 迭代三指针法
       - 链表反转: 递归法
       - 链表的插入/删除前驱查找
@@ -581,7 +571,7 @@
   第15天: 哈希表
     学习目标: 理解哈希表原理, 能手写链地址法实现
     学习内容:
-      - 哈希表概念 (数组+链表) (noters/day14.md)
+      - 哈希表概念 (数组+链表) (notes/day14.md)
       - 哈希函数: key -> hash -> idx
       - 链地址法实现: put/get/remove
       - 负载因子与扩容原理
@@ -593,7 +583,7 @@
   第16天: 二叉树与基础排序
     学习目标: 掌握二叉树和三种 O(n^2) 排序
     学习内容:
-      - 数组模拟二叉树 (2i+1, 2i+2) (noters/day15.md)
+      - 数组模拟二叉树 (2i+1, 2i+2) (notes/day15.md)
       - BST 二叉搜索树 (插入/查找)
       - 选择排序
       - 冒泡排序
@@ -608,7 +598,7 @@
   第17天: 高级排序与文件流
     学习目标: 掌握快速排序和文件流基本操作
     学习内容:
-      - 分治 vs 递归 (noters/day16.md)
+      - 分治 vs 递归 (notes/day16.md)
       - 快速排序: partition 实现
       - 大顶堆/小顶堆/堆排序
       - 文件流: fopen/fclose/fgetc/fputc
@@ -622,7 +612,7 @@
   第18天: 文件流深入
     学习目标: 掌握文件流全部操作 (二进制/定位/错误处理)
     学习内容:
-      - fopen 全部模式: r/w/a/rb/wb/r+/w+ (noters/day17.md)
+      - fopen 全部模式: r/w/a/rb/wb/r+/w+ (notes/day17.md)
       - fgets/fputs/fprintf/fscanf
       - fread/fwrite 二进制读写
       - fseek/ftell 文件定位
@@ -665,7 +655,7 @@
   第20天: 大模型与 AI 辅助开发概念
     学习目标: 了解 AI 辅助开发的基本概念
     学习内容:
-      - 大模型本质: 概率预测模型 (noters/day18.md)
+      - 大模型本质: 概率预测模型 (notes/day18.md)
       - Function Calling / MCP 协议
       - Agent / Spec-driving / Skill
       - Prompt Engineering 基础
@@ -687,7 +677,7 @@
   第22天: 无缓冲文件流 / mmap
     学习目标: 掌握 read/write 系统调用和 mmap 内存映射
     学习内容:
-      - read/write 系统调用 (noters/day20.md)
+      - read/write 系统调用 (notes/day20.md)
       - 与 fopen/fread 对比
       - mmap: 内存映射文件
       - dup2 重定向
@@ -747,47 +737,53 @@
 七、资料索引
 ===============================================================================
 
-  7.1 笔记 (noters/)
+  7.1 笔记 (notes/)
 
-    day00.md   环境搭建与工具链
-    day01.md   变量/函数/printf/scanf
-    day02.md   预处理/宏/调试/虚拟内存
-    day03.md   数据类型/sizeof/位运算
-    day04.md   运算符/表达式/类型转换
-    day05.md   数组/二维数组/随机数
-    day06.md   函数/栈帧/static/递归
-    day07.md   指针/地址/解引用/NULL
-    day08.md   数组指针/指针数组/字符串
-    day09.md   字符串安全/命令行参数
-    day10.md   结构体/枚举/内存管理/函数指针
-    day11.md   calloc/realloc/vector
-    day12.md   头文件/qsort/链表
-    day13.md   链表反转/线性表对比
-    day14.md   哈希表实现
-    day15.md   二叉树/选择/冒泡/插入
-    day16.md   快排/堆排/文件流
-    day17.md   fgets/fread/fseek/errno
-    day18.md   大模型/AI概念
-    day20.md   open/mmap/dup2
+    day01-变量函数输入输出.md       变量/函数/printf/scanf
+    day02-预处理内存模型.md         预处理/宏/调试/虚拟内存
+    day03-数据类型与位运算.md       数据类型/sizeof/位运算
+    day04-运算符与表达式.md         运算符/表达式/类型转换
+    day05-数组.md                   数组/二维数组/随机数
+    day06-函数详解.md               函数/栈帧/static/递归
+    day07-指针基础.md               指针/地址/解引用/NULL
+    day08-指针进阶与字符串.md       数组指针/指针数组/字符串
+    day09-字符串进阶与命令行参数.md 字符串安全/命令行参数
+    day10-结构体枚举动态内存.md     结构体/枚举/内存管理/函数指针
+    day11-动态内存管理深入.md       calloc/realloc/vector
+    day12-头文件函数指针链表.md     头文件/qsort/链表
+    day13-链表操作复习.md           链表反转/线性表对比
+    day14-哈希表.md                 哈希表实现
+    day15-二叉树与基础排序.md       二叉树/选择/冒泡/插入
+    day16-高级排序与文件流基础.md   快排/堆排/文件流
+    day17-文件流深入.md             fgets/fread/fseek/errno
+    day20-无缓冲文件流mmap.md       open/mmap/dup2
 
-  7.2 思维导图 (mind-maps/)
+  7.2 思维导图 (mindmaps/)
 
-    共 21 组, 路径: mind-maps/离线思维导图/离线/ (mm) + mind-maps/离线pos/ (pos)
+    共 19 组, 按新命名排列:
 
-    Day00  安装软件          Day13  算法重点
-    Day01  basic1            Day14  文件流
-    Day02  basic2            Day16  Shell命令
-    Day04  数组              Day17  GNU编译工具集
-    Day05  函数              Day17  vim编辑器
-    Day06  指针基础           Day19  目录流
-    Day08  字符串            Day19  无缓冲文件流
-    Day09  指针高级           Day20  无缓冲文件流
-    Day10-12 数据结构重点     Day20  mmap
-                             Day21  管道IO多路复用
-                             Day21  重定向
-                             Day23  进程基础
+    day01-变量函数输入输出.mm/.pos
+    day02-预处理内存模型.mm/.pos
+    day05-数组.mm/.pos
+    day06-函数详解.mm/.pos
+    day07-指针基础.mm/.pos
+    day08-指针进阶与字符串.mm/.pos
+    day09-字符串进阶与命令行参数.mm/.pos
+    day10-结构体枚举动态内存.mm/.pos
+    day13-算法基础.mm/.pos
+    day16-Shell命令.mm/.pos
+    day17-GNU编译工具集.mm/.pos
+    day17-vim编辑器.mm/.pos
+    day17-文件流深入.mm/.pos
+    day19-无缓冲文件流.mm/.pos
+    day19-目录流.mm/.pos
+    day20-mmap.mm/.pos
+    day20-无缓冲文件流.mm/.pos
+    day21-管道IO多路复用.mm/.pos
+    day21-重定向.mm/.pos
+    day23-进程基础.mm/.pos
 
-  7.3 预习资料 (misc/预习资料/)
+  7.3 预习资料 (preview/)
 
     CDay01思维导图_basic1.pdf
     CDay02笔记_01_printf_scanf_输入输出缓冲区.pdf
@@ -822,7 +818,7 @@
 
   8.1 新增笔记
 
-    在 noters/ 下创建 dayXX.md, 使用模板:
+    在 notes/ 下创建 dayXX.md, 使用模板:
 
     # DayXX - 主题名称
 
