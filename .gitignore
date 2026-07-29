@@ -17,15 +17,7 @@
 Thumbs.db
 .DS_Store
 
-# PDF 书籍 (版权, 体积大)
-*.pdf
-
-# zip 压缩包
-*.zip
-
-# POS 格式导图 (.mm 已够)
-# 如果要保留 .pos, 删除下面这行
-# *.pos
+# POS 格式导图 (已包含, 不屏蔽)
 
 # 个人备忘 (如果你不想公开)
 # misc/盲点.md
