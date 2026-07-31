@@ -71,6 +71,7 @@ git clone https://github.com/sorcerer0o/c.git
 | day19-目录流无缓冲文件流 | 目录流/无缓冲IO/mmap/dup2重定向 |
 | day20-Shell | Shell命令/管道重定向/脚本/进程/权限 |
 | day21-Linux系统基础与工具链 | 文件系统/权限/Vim/GCC/find/tar/xxd |
+| day22-GNU工具集 | 条件编译/GDB调试/Coredump/库文件/Makefile |
 
 ### 专题目录
 
