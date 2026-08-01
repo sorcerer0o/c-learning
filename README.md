@@ -72,6 +72,7 @@ git clone https://github.com/sorcerer0o/c.git
 | day20-Shell | Shell命令/管道重定向/脚本/进程/权限 |
 | day21-Linux系统基础与工具链 | 文件系统/权限/Vim/GCC/find/tar/xxd |
 | day22-GNU工具集 | 条件编译/GDB调试/Coredump/库文件/Makefile |
+| day23-文件流 | 系统调用方法/有缓冲vs无缓冲/fd/open-read-write/ftruncate |
 
 ### 专题目录
 
