@@ -73,6 +73,7 @@ git clone https://github.com/sorcerer0o/c.git
 | day21-Linux系统基础与工具链 | 文件系统/权限/Vim/GCC/find/tar/xxd |
 | day22-GNU工具集 | 条件编译/GDB调试/Coredump/库文件/Makefile |
 | day23-目录流 | 系统调用/ISO-C/POSIX/目录系统调用/目录流/stat/ls-al/tree |
+| day24-目录流进阶 | 复习巩固/目录流/dirent/指针栈区/stat/缓冲区/类型别名查看 |
 
 ### 专题目录
 
