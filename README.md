@@ -25,6 +25,10 @@
 │   ├── day17-文件流深入.md
 │   ├── day19-目录流无缓冲文件流.md
 │   ├── day20-Shell.md
+│   ├── day21-Linux系统基础与工具链.md
+│   ├── day22-GNU工具集.md
+│   ├── day23-目录流.md
+│   ├── day24-目录流进阶.md
 │   ├── AI/                   # AI 辅助开发专题
 │   └── Linux/                # Linux 系统编程专题
 │       ├── 01_Linux基础/
