@@ -248,6 +248,7 @@ void seekdir(DIR *dirp, long loc);
   - 规律: **在 readdir 返回上一个目录项时, 记录下一个目录项的位置**
 
 ### rewinddir: 倒带目录流
+
 ```c
 #include <dirent.h>
 void rewinddir(DIR *dirp);
