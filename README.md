@@ -29,6 +29,10 @@
 │   ├── day22-GNU工具集.md
 │   ├── day23-目录流.md
 │   ├── day24-目录流进阶.md
+│   ├── day25-无缓冲文件流与mmap.md
+│   ├── day26-管道与select.md
+│   ├── day27-文件描述符重定向与进程.md
+│   ├── day28-进程回收与IPC.md
 │   ├── AI/                   # AI 辅助开发专题
 │   └── Linux/                # Linux 系统编程专题
 │       ├── 01_Linux基础/
@@ -78,6 +82,10 @@ git clone https://github.com/sorcerer0o/c.git
 | day22-GNU工具集 | 条件编译/GDB调试/Coredump/库文件/Makefile |
 | day23-目录流 | 系统调用/ISO-C/POSIX/目录系统调用/目录流/stat/ls-al/tree |
 | day24-目录流进阶 | 复习巩固/目录流/dirent/指针栈区/stat/缓冲区/类型别名查看 |
+| day25-无缓冲文件流与mmap | 缓冲类型/open-read-write-lseek/ftruncate/mmap/页缓存 |
+| day26-管道与select | 阻塞队列/管道/半双工/select/fd_set |
+| day27-文件描述符重定向与进程 | fopen底层/fileno/dup-dup2/重定向/缓冲机制/fork |
+| day28-进程回收与IPC | wait/waitpid/僵尸孤儿进程/IPC总览 |
 
 ### 专题目录
 
